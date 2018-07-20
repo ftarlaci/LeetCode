@@ -17,7 +17,7 @@ public:
             if(mapped[haystack[end++]]-- > 0) needlesz--;
             if(needlesz == 0){
                 int i = begin;
-                int j = 0;             
+                int j = 0;
                 while(j < needle.length() && haystack[i] == needle[j]) {
                     i++;
                     j++;
