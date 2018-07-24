@@ -14,7 +14,7 @@ public:
         }
         int j = i;
         while(j >= 0 && s[j] != space){
-            j--;  
+            j--;
         }
         return i - j;
     }
