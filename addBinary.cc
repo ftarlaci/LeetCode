@@ -16,12 +16,6 @@ public:
     		i--;
     		j--;
     	}
-    		return sum;
-    } 
-}
-
-
-    	
-        
+    	return sum;
     }
 };
