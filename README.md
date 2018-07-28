@@ -1,3 +1,5 @@
 # LeetCode
 
-This repository contains some of the fun coding questions I have solved on LeetCode.com to give a glimpse of my coding style and demonstrate my algorithmic thinking and approaches. Files are named after the questions as listed on LeetCode and each file includes the statement of the question, commented out on top of any given file. 
+This repository contains some of the coding questions I have solved and submitted on LeetCode.com to provide a peek into (or dissect if you like) some of my stylistic/algorithmic programming choices and demonstrate my algorithmic thinking and approaches to various problems. 
+
+Files are named after the questions as listed on LeetCode. Each file includes the verbatim statement of the question from the website, commented out on top of any given file. 
