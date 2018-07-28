@@ -30,7 +30,6 @@ public:
     		prev->next = temp->next;
     		nextOfnext = temp;
     		temp = temp->next;
-    		
     	}       
     }
 };
