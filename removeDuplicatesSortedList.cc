@@ -10,30 +10,27 @@
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-    	Listnode *curr = head;
+        if(head == nullptr) return nullptr;
+        ListNode *curr = head;
+        ListNode *temp;
     	while(curr->next != nullptr){
+            //check if curr->next->next is not null first.
     		if(curr->val == curr->next->val){
-    			curr->next = curr->next->next;
-    		}
-    		curr = curr->next;
-    	}
+    			temp = curr->next->next;
+                delete curr->next;
+                curr->next = temp;
+            }else {
+                curr= curr->next;
+            }
+        }
+        return head;
+    }
 };
-// I went ahead and dealt with the duplicates in an unsorted linked list as well. 
+// I will go ahead and dealt with the duplicates in an unsorted linked list as well. 
 // Given a sorted linked list, delete all duplicates such that each element appear only once.
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-    	Listnode *temp = head->next;
-    	Listnode *prev;
-    	Listnode *nextOfnext;
-    	while(temp->next != nullptr){
-    		prev->next = temp->next;
-    		nextOfnext = temp;
-    		temp = temp->next;
-    		if()
-    	}
-
-
-        
+	//TODO   
     }
 };
