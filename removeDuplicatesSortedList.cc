@@ -31,17 +31,6 @@ public:
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-<<<<<<< HEAD
-	//TODO   
-=======
-    	Listnode *temp = head->next;
-    	Listnode *prev;
-    	Listnode *nextOfnext;
-    	while(temp->next != nullptr){
-    		prev->next = temp->next;
-    		nextOfnext = temp;
-    		temp = temp->next;
-    	}       
->>>>>>> 742c6544951930c801496e8266bd898323baccba
+    	//TODO
     }
 };
