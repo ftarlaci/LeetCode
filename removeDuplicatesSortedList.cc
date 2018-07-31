@@ -34,23 +34,17 @@ public:
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-    	if(head == nullptr) return nullptr;
-        ListNode *curr = head;
-        ListNode *temp;
-    	while(curr->next != nullptr){
-            //check if curr->next->next is not null first.
-    		if(curr->val == curr->next->val){
-    			temp = curr->next->next;
-                delete curr->next;
-                curr->next = temp;
-            }else {
-                curr = curr->next;
-            }
+        if(!head || !head->next) return head;
+        ListNode *curr = head->next;
+        while(curr && curr->val == head->val) {
+            curr = curr->next;
         }
+        if(curr != head->next){
+            return deleteDuplicates(curr);
+        }
+        head->next = deleteDuplicates(curr);
         return head;
-
-        
-    }
+        }
 };
 // I will go ahead and dealt with the duplicates in an unsorted linked list as well. 
 // Given a sorted linked list, delete all duplicates such that each element appear only once.
