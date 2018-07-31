@@ -18,12 +18,28 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-    	ListNode *curr = head;
-        ListNode *prev = nullptr;
-        next = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = next;
-        //TO CONT
+    	int carry = 0;
+          ListNode* headL1 = l1;
+          ListNode* prev = l1;
+        
+          while(l1 != nullptr) {
+            int L2Val = l2 ? l2->val : 0;
+            l1->val += L2Val + carry;
+            carry = l1->val / 10;
+            l1->val= l1->val % 10;
+            prev = l1;
+            l1 = l1->next;
+            l2 = l2 ? l2->next : nullptr;
+            if(l1 == nullptr) {
+              prev->next = l2;
+              l2 =  nullptr;
+              l1 = prev->next;
+            }
+          }
+          if(carry!= 0){
+              prev->next = new ListNode(1);
+          }
+          return headL1;
     }
+        
 };
