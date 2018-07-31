@@ -18,6 +18,12 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        
+    	ListNode *curr = head;
+        ListNode *prev = nullptr;
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+        //TO CONT
     }
 };
