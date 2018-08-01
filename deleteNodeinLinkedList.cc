@@ -22,5 +22,21 @@
 class Solution {
 public:
     void deleteNode(ListNode* node) {
+    	ListNode *head;
+        ListNode*curr;
+        curr = head;
+        //if there are only 2 nodes
+        if(head->next != nullptr && head->next->next == nullptr){
+            if(head->val == node->val) {
+                head = head->next;
+                delete head;
+                head->next = head;
+            }
+        }
+        // more than two
+        while(head->next->val != node->val){
+            curr = curr->next;
+            deleteNode(curr);
+        }
     }
 };
