@@ -22,6 +22,19 @@ return its minimum depth = 2.
 class Solution {
 public:
     int minDepth(TreeNode* root) {
-        
+    	if(root == nullptr){
+    		return 0;
+    	}
+    		if(root->left == nullptr){
+    			minDepth(root->right);
+    		}
+    		if(root->right == nullptr){
+    			minDepth(root->left);
+    		}
+    		if(root->left != nullptr && root->right != nullptr){
+    			return (min(minDepth(root->right), minDepth(root->left)));
+    		}
+    	}
+    	return false;
     }
 };
