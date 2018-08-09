@@ -25,16 +25,15 @@ public:
     	if(root == nullptr){
     		return 0;
     	}
-    		if(root->left == nullptr){
-    			minDepth(root->right);
-    		}
-    		if(root->right == nullptr){
-    			minDepth(root->left);
-    		}
-    		if(root->left != nullptr && root->right != nullptr){
-    			return (min(minDepth(root->right), minDepth(root->left)));
-    		}
-    	}
-    	return false;
+		if(root->left == nullptr && root->right == nullptr){
+			return 1;
+		}
+		if(root->left == nullptr){
+			return minDepth(root->left) + 1;
+		}
+		if(root->right == nullptr){
+			return minDepth(root->left) + 1;
+		}
+		return (min(minDepth(root->right), minDepth(root->left)) + 1);
     }
 };
