@@ -25,7 +25,10 @@ return its bottom-up level order traversal as:
 class Solution {
 public:
     vector<vector<int>> levelOrderBottom(TreeNode* root) {
-    	
-        
-    }
+
+	    for(int i = 0; i < vec.size(); i++){
+	    //print each level on a new line
+	        cout << "[" << vec << "]" << endl;
+	    }
+   	}
 };
