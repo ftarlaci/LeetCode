@@ -24,11 +24,18 @@ return its bottom-up level order traversal as:
  */
 class Solution {
 public:
-    vector<vector<int>> levelOrderBottom(TreeNode* root) {
+    void depthFirst(TreeNode* root, vector<vector<int> >& vec, int level){
+        if(!root) return;
+        if(level == vec.size()) vec.push_back({});
+        vec[level].push_back(root->val);
+        depthFirst(root->left, vec, level + 1);
+        depthFirst(root->right, vec, level + 1);
+    }
 
-	    for(int i = 0; i < vec.size(); i++){
-	    //print each level on a new line
-	        cout << "[" << vec << "]" << endl;
-	    }
-   	}
+    vector<vector<int>> levelOrderBottom(TreeNode* root) {
+      vector<vector<int> > vec;
+        depthFirst(root, vec, 0);
+        reverse(vec.begin(), vec.end());
+        return vec;
+    }
 };
