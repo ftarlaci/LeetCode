@@ -37,10 +37,12 @@ Return false.
  */
 class Solution {
 public:
-    bool isBalanced(TreeNode* root) {
+    int height(TreeNode* root) {
+        return root ? max(height(root->left), height(root->right)) + 1 : 0;
+    }
 
-      // int diff = x > y ? x - y : y - x;
-      // int diff = std::abs(x - y);
-        
+    bool isBalanced(TreeNode* root) {
+        return root ? abs(height(root->left) - height(root->right)) <= 1 
+            && isBalanced(root->left) && isBalanced(root->right) : true;
     }
 };
