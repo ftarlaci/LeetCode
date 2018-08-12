@@ -27,12 +27,12 @@ public:
     	TreeNode* root = new TreeNode(nums[nums.size() / 2]);
     	
     	// create two vectors as from the main vector by dividing in the middle.  
-    	vector<int> leftVec(nums.begin(), nums.begin() + nums.size() / 2 + 1);
-    	vector<int> rightVec(nums.begin() + nums.size() / 2 + 1, nums.end());
+    	vector<int> left(nums.begin(), nums.begin() + nums.size() / 2);
+    	vector<int> right(nums.begin() + nums.size() / 2 + 1, nums.end());
     	
     	// point the root pointer to the subvectors [0] and recurse on both sub-vectors. 
-    	root->leftVec = sortedArrayToBST(leftVec);
-    	root->rightVec = sortedArrayToBST(rightVec);
+    	root->left = sortedArrayToBST(left);
+    	root->right = sortedArrayToBST(right);
     	return root; 
     }
 };
