@@ -5,7 +5,6 @@
 class Solution {
 public:
     int mySqrt(int x) {
-    	
-        
+    	return (floor(pow(10, (log10(x)) / 2 ))); 
     }
 };
