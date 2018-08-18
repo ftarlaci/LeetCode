@@ -13,6 +13,21 @@
 class Solution {
 public:
     string countAndSay(int n) {
-        
+    	if (n < 1) return "";
+        string out = "1";
+        for (int i = 2; i <= n; i++) {
+            string curr = "";
+            int j = 0;
+            int k = 0;
+            while (j < out.length()) {
+                while (out[j] == out[k]) {
+                    j++;
+                }
+                curr += to_string(j - k) + out[k];
+                k = j;
+            }
+            out = curr;
+        }
+   	    return out;    
     }
 };
