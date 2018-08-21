@@ -17,6 +17,9 @@ Output: true
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
+    	//s.erase(remove_if(s.begin(), s.end(), isNotAlpha), s.end());
+        //transform(head->val.begin(), s.end(), s.begin(), ::toupper);
+        //return equal(s.begin(), s.begin() + s.size() / 2, s.rbegin());
         
     }
 };
