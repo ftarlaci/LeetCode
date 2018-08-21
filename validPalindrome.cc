@@ -10,7 +10,13 @@ Output: false
 */
 class Solution {
 public:
+    static bool isNotAlpha(char ch){
+        return !isalnum(ch);
+    }
     bool isPalindrome(string s) {
-        
+        if(s == "" || s.length() == 1) return true;
+        s.erase(remove_if(s.begin(), s.end(), isNotAlpha), s.end());
+        transform(s.begin(), s.end(), s.begin(), ::toupper);
+        return equal(s.begin(), s.begin() + s.size() / 2, s.rbegin());
     }
 };
