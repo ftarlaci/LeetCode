@@ -15,6 +15,20 @@ The order of the result is not important. So in the above example,
 class Solution {
 public:
     vector<int> singleNumber(vector<int>& nums) {
+    	int value = 0;
+        for(int num : nums) {
+            value ^= num;
+        }
+        value &= -value;
+        vector<int> uniqs(2, 0);
         
+        for(int num : nums) {
+            if(num & value) {
+                uniqs[0] ^= num;
+            }else {
+                uniqs[1] ^= num;
+            }
+        }
+        return uniqs;  
     }
 };
