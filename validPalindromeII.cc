@@ -12,8 +12,26 @@ The string will only contain lowercase characters a-z.
 The maximum length of the string is 50000.
 */
 class Solution {
+  private:  
+    bool isPalindrome(string s, int low, int high) {
+        while(low < high) {
+            if (s[low] != s[high]){
+                return false;
+            }
+            low++; high--;
+        }
+        return true;
+    }
 public:
     bool validPalindrome(string s) {
-       if(s == "" || s.length() == 1 || s.length() == 2) return true;
+        int low = 0;
+        int high = s.size() - 1;     
+        while(low < high) {
+            if (s[low] != s[high]) {
+                return (isPalindrome(s, low + 1, high) || isPalindrome(s, low, high - 1));
+            }
+            low++; high--;
+        }
+        return true;
     }
 };
