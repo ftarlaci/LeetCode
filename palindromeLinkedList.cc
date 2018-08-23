@@ -17,9 +17,30 @@ Output: true
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-    	//s.erase(remove_if(s.begin(), s.end(), isNotAlpha), s.end());
-        //transform(head->val.begin(), s.end(), s.begin(), ::toupper);
-        //return equal(s.begin(), s.begin() + s.size() / 2, s.rbegin());
-        
+        if(head == nullptr || head->next == nullptr){ return true; }
+        ListNode* slow(head);
+        ListNode* fast(head);
+        while(fast && fast->next){
+            slow = slow->next;  // jump one step
+            fast = fast->next->next; // jump two steps
+        }
+        if(fast) {
+        	slow = slow->next;
+        }   
+        ListNode* prev(nullptr); 
+        ListNode* cur(slow);
+        ListNode* next;
+        while(curr){
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        while(prev){
+            if(prev->val != head->val) return false;
+            prev = prev->next;
+            head = head->next;
+        }
+        return true;
     }
 };
