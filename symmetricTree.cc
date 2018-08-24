@@ -32,7 +32,6 @@ public:
 		return false;
 	}
     bool isSymmetric(TreeNode* root) {
-    	return mirrorTree(root, root);
-        
+    	return mirrorTree(root, root);        
     }
 };
