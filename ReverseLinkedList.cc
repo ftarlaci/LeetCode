@@ -1,5 +1,4 @@
 /**206. Reverse Linked List
-DescriptionHintsSubmissionsDiscussSolution
 Reverse a singly linked list.
 Example:
 Input: 1->2->3->4->5->NULL
@@ -16,6 +15,16 @@ A linked list can be reversed either iteratively or recursively. Could you imple
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
+    	if(!head || head->next == nullptr) return head;
+        ListNode* prev = head;
+        ListNode* curr = prev->next;
+        while (curr) {
+            prev->next = curr->next;
+            curr->next = head;
+            head = curr;
+            curr = prev->next;
+        }
+        return head; 
         
     }
 };
