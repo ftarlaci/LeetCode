@@ -22,7 +22,6 @@ Bonus points if you could solve it both recursively and iteratively.
  */
 class Solution {
 public:
-
 	bool mirrorTree(TreeNode *t1 TreeNode t2){
 		if(t1 == nullptr && t2 == nullptr) return true;
 		if(t1 && t2 && t1->val == t2->val){
