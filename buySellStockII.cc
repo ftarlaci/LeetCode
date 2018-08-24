@@ -27,6 +27,5 @@ public:
             profit += max(0, prices[i] - prices[i-1]);
         }
         return profit;
-        
     }
 };
