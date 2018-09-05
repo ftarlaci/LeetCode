@@ -13,17 +13,13 @@ public:
     	if(num1.length() > num2.length()){
     		swap(num1, num2);
     	}
-
     	// will return sum in this string
     	string sum = "";
     	int firstNumLen = num1.length();  // length of the strings store as int. 
     	int secNumLen = num2.length();
-
-
     	// reverse , alternatively we could traverse from the end in loops for efficiency. 
     	reverse(num1.begin(), num1.end());
     	reverse(num2.begin(), num2.end());
-
     	// sum and pay attention to carry 
     	int carry = 0;
     	for(int i = 0; i < firstNumLen; i++){
@@ -33,7 +29,6 @@ public:
     		// calculate carry
     		carry = sumNum / 10;
     	}
-
     	// larger number digits in case of carry
     	for(int j = firstNumLen; j < secNumLen; j++){
     		int sumNum = ((num2[j] - '0') + carry);
@@ -43,7 +38,6 @@ public:
     	if(carry) {
     		sum.push_back(carry + '0');
     	}
-
     	// reverse sum so that we can print the result
     	reverse(sum.begin(), sum.end());
     	return sum;
