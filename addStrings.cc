@@ -1,14 +1,15 @@
-/*Given two non-negative integers num1 and num2 represented as string, return the sum of num1 and num2.
+/*Given two non-negative integers num1 and num2 represented as string, 
+return the sum of num1 and num2.
 Note:
 The length of both num1 and num2 is < 5100.
 Both num1 and num2 contains only digits 0-9.
 Both num1 and num2 does not contain any leading zero.
-You must not use any built-in BigInteger library or convert the inputs to integer directly. no atoi() :(
+You must not use any built-in BigInteger library or convert the
+inputs to integer directly. no atoi() :(
 */
 class Solution {
 public:
     string addStrings(string num1, string num2) {
-
     	// check the length of the strings for aligning if necessary
     	if(num1.length() > num2.length()){
     		swap(num1, num2);
@@ -25,7 +26,6 @@ public:
     	for(int i = 0; i < firstNumLen; i++){
     		int sumNum ((num1[i] - '0') + (num2[i] - '0') + carry);
     		sum.push_back(sumNum % 10 + '0');
-
     		// calculate carry
     		carry = sumNum / 10;
     	}
