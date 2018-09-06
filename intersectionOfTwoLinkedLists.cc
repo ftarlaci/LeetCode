@@ -29,7 +29,9 @@ Your code should preferably run in O(n) time and use only O(1) memory.
 	According to the graphic given in the picture,  we can assume that 
 	the intersection, if exists, will be consequtive. However, the size of the
 	two LLs do not have to be the same. These can be confirmed by asking 
-	the interviewer. 
+	the interviewer. Since we need to be confined in O(1) memory, we can't 
+	use another data structure to store the lists. We can't create 
+	a cycle with the two because they need to retain their original structure. 
 */
 class Solution {
 public:
