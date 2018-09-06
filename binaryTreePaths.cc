@@ -21,6 +21,7 @@
  */
 class Solution {
 public:
-    vector<string> binaryTreePaths(TreeNode* root) {        
+    vector<string> binaryTreePaths(TreeNode* root) { 
+    	       
     }
 };
