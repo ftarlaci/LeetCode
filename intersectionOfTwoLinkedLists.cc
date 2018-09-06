@@ -36,6 +36,23 @@ Your code should preferably run in O(n) time and use only O(1) memory.
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-       if(!headA || !headB) return nullptr; 
+       if(!headA || !headB) return nullptr;
+        ListNode * currA = headA;
+        ListNode * currB = headB;
+        //ListNode * intersectionNode(0);
+        while(currA != nullptr && currB != nullptr && currA != currB) {
+            currA = currA->next;
+            currB = currB->next;
+            if(currA == currB) return currA;
+
+        // If one of them reaches the end before the other one then move
+        //  it to the beginning of other list.
+        // Once both of them are reassigned, 
+        // they will be equally distant from the collision index.
+
+            if(currA == nullptr) currA = headB;
+            if(currB == nullptr) currB = headA;
+        }
+        return currA;
     }
 };
