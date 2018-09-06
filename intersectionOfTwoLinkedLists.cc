@@ -24,6 +24,13 @@ Your code should preferably run in O(n) time and use only O(1) memory.
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
+/*  NOTE: Take aways from the question statement: 
+	According to the graphic given in the picture,  we can assume that 
+	the intersection, if exists, will be consequtive. However, the size of the
+	two LLs do not have to be the same. These can be confirmed by asking 
+	the interviewer. 
+*/
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
