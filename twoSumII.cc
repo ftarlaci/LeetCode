@@ -16,6 +16,15 @@ Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
 class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
-        
+        unordered_map<int, int> m;
+        for(int i = numbers.size() - 1; i >= 0; i--) {
+            // find() 
+            if(m.find(target - numbers[i]) != m.end()) {
+                return {i + 1, m[target - numbers[i]] + 1};
+            }
+            // put in map
+            m[numbers[i]] = i;
+        }
+        return {}; 
     }
 };
