@@ -19,9 +19,29 @@
 	The index is starting from 0 to the list length minus 1.
 	No duplicates in both lists.
 */
+
+/*  Normally we could sort the shorter (if any) vector and do a search over the bigger vector and 
+	see if there are any common elements. However, since we care about the index number of the common
+	element we can't take advantage of the sorting. 
+	so we should use a hashmap. */
 class Solution {
 public:
     vector<string> findRestaurant(vector<string>& list1, vector<string>& list2) {
-        
+    	vector<string> intersect;
+        unordered_map<string,int> m;
+        int minIndex = INT_MAX;
+        for(int i = 0; i < list1.size(); i++) {
+            m[list1[i]] = i; // put list one in map
+        }
+        for(int i = 0; i < list2.size(); i++) {
+            if(m.count(list2[i]) != 0) {
+                if(m[list2[i]] + i < minIndex) {
+                    minIndex = m[list2[i]] + i, intersect.clear(), intersect.push_back(list2[i]);
+                } else if(m[list2[i]] + i == minIndex){
+                    intersect.push_back(list2[i]);
+                }
+            }
+        }
+        return intersect;        
     }
 };
