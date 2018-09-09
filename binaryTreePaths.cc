@@ -21,9 +21,40 @@
  */
 class Solution {
 public:
-    vector<string> binaryTreePaths(TreeNode* root) { 
-    	vector<string> paths;
-        int i = 0;
-    	       
+    vector<string> binaryTreePaths(TreeNode* root) {
+        vector<string> paths;
+        if(!root) return paths;
+        if(!root->left && !root->right) {
+            string path = to_string(root->val);
+            paths.push_back(path);
+            return paths;
+        }
+        stack<TreeNode*> s;
+        stack<string> paths2;
+        s.push(root);
+        paths2.push(to_string(root->val));
+        
+        while(!s.empty()){
+            TreeNode * curr = s.top();
+            s.pop();
+            string temp = paths2.top();
+            paths2.pop();
+            if(curr->left == nullptr && curr->right == nullptr){
+                paths.push_back(temp);
+                continue;
+            } 
+            if(curr->right != nullptr) {
+                s.push(curr->right);
+                paths2.push(temp + "->" + to_string(curr->right->val));
+            } 
+            if (curr->left !=  nullptr) {
+                s.push(curr->left);
+                paths2.push(temp + "->" + to_string(curr->left->val));
+            }
+            
+        }
+        return paths;
+        
+        
     }
 };
