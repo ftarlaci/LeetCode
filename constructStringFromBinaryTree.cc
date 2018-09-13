@@ -39,5 +39,13 @@ the one-to-one mapping relationship between the input and the output.
 class Solution {
 public:
     string tree2str(TreeNode* t) {
+      if(!t) return "";
+        if(t->left == t->right) {
+            return to_string(t->val);
+        } else if(t->right == nullptr) {
+            return to_string(t->val) + "(" + tree2str(t->left) + ")";
+        }
+        return to_string(t->val) + "(" + tree2str(t->left) + ")" + "(" + tree2str(t->right) + ")";
+        
     }
 };
