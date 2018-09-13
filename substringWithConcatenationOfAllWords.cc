@@ -23,3 +23,5 @@ public:
         
     }
 };
+
+// vector<Type>::iterator nth = v.begin() + index;
