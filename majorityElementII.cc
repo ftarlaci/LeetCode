@@ -18,12 +18,12 @@ public:
         unordered_map<int, int> freqMap; 
         vector<int> majors;
         int n = nums.size();
-        for (int i = 0; i < n; i++){
-            if (++freqMap[nums[i]] > n / 3){
-            	majors.push_back(nums[i]);
+        for (auto i : nums){
+            if (freqMap[i] <= n/3 and ++freqMap[i] > n / 3){
+            	majors.push_back(i);
             }
          }
-        return majors;  // not quite working,yet 
+        return majors;
         
     }
 };
