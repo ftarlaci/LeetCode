@@ -15,9 +15,19 @@ Example 2:
 Input: nums = [5,7,7,8,8,10], target = 6
 Output: [-1,-1]
 */
+
+// lambda with any_of example:
+// if(any_of(nums.begin(), nums.end(), [=](int i){return i == target;})){
+
+	// offset an iterator to get a subvector:
+	// vector<T>::const_iterator first = myVec.begin() + 100000;
+	// vector<T>::const_iterator last = myVec.begin() +  101000;
+	// vector<T> newVec(first, last); will have newvec[0] = 100000
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
-        
+        // our cue is the given runtime complexity, which calls 
+        // for a binary search of the array since it is sorted. 
+
     }
 };
