@@ -17,6 +17,16 @@ Explanation: Integer 128 has binary representation 00000000000000000000000010000
 class Solution {
 public:
     int hammingWeight(uint32_t n) {
-        
+        // bitset<32> in(n);        
+        // string s = in.to_string();
+        // int num = 0;
+        // for(int i = 0; i < s.length(); i++){
+        //     if(s[i] == "1"){
+        //         num++;
+        //     }
+        // }
+        // return num;
+        // OR
+        return __builtin_popcount(n);
     }
 };
