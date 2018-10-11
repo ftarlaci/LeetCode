@@ -23,6 +23,15 @@ There are two left leaves in the binary tree, with values 9 and 15 respectively.
 class Solution {
 public:
     int sumOfLeftLeaves(TreeNode* root) {
-        
+        if(root == nullptr) return 0;
+        root->val = 0;
+        return sumOfLeftLeavesRec(root);
+    }
+    
+    int sumOfLeftLeavesRec(TreeNode* root){
+        if(!root) return 0;
+        if(root->right) root->right->val = 0;
+        if(!root->left && !root->right) return root->val;
+        return sumOfLeftLeavesRec(root->left) + sumOfLeftLeavesRec(root->right);
     }
 };
