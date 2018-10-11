@@ -25,8 +25,7 @@ public:
         if(root == nullptr) return 0;
         root->val = 0;
         return sumOfLeftLeavesRec(root);
-    }
-    
+    } 
     int sumOfLeftLeavesRec(TreeNode* root){
         if(!root) return 0;
         if(root->right) root->right->val = 0;
